@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="UP2IlyaM/AddEditForm.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/App.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/Main.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/MainWindow.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/Note.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/NoteForm.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/ServiceWindow.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+        <entry key="UP2IlyaM/UserForm.axaml" value="UP2IlyaM/UP2IlyaM.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

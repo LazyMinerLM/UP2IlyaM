@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="UP2IlyaM.NoteForm"
+        Icon="avares://UP2IlyaM/Images/service_logo.ico" 
+        Title="Запись на услугу">
+        <Grid>
+                <StackPanel Orientation="Horizontal">
+                        <TextBox Name="Note_ID" x:CompileBindings="False" Text="{Binding ID}" IsVisible="False" Width="0" Height="0" IsReadOnly="True"></TextBox>
+                </StackPanel>
+                <UniformGrid Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "0 25 0 0">Имя: </TextBlock>
+                                <TextBox Name="ClientName" x:CompileBindings="False" Text="{Binding Name}" Width="250" Height="5" Margin = "85 0 0 20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "0 25 0 0">Фамилия: </TextBlock>
+                                <TextBox Name="ClientSurname" x:CompileBindings="False" Text="{Binding Surname}" Width="250" Height="5" Margin = "85 0 0 20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "0 25 0 0">Отчество(не обязательно): </TextBlock>
+                                <TextBox Name="ClientMiddleName" x:CompileBindings="False" Text="{Binding MiddleName}" Width="250" Height="5" Margin = "85 0 0 20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "0 25 0 0">Телефон: </TextBlock>
+                                <TextBox Name="ClientPhone" x:CompileBindings="False" Text="{Binding Phone}" Width="250" Height="5" Margin = "85 0 0 20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "10 35 0 0">Услуга: </TextBlock>
+                                <ComboBox Name="CmbServices" Width="200" Margin ="10 10 0 0" 
+                                          x:CompileBindings="False">
+                                        <ComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                        <TextBlock Text="{Binding Service}"></TextBlock>
+                                                </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "10 35 0 0">Дата (ГГГГ.ММ.ДД): </TextBlock>
+                                <MaskedTextBox Name = "StartDate" Mask="0000/00/00"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin = "10 35 0 0">Дата (ГГГГ.ММ.ДД): </TextBlock>
+                                <MaskedTextBox Name = "EndDate" Mask="0000/00/00"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <Button Name="Save" Content="Сохранить" Margin = "0 30 0 20" Click="Save_OnClick"></Button>
+                                <Button Name="Back" Content="Назад" Click="GoBack"  Margin = "305 30 0 20"></Button>
+                        </StackPanel>
+                </UniformGrid>
+        </Grid>
+</Window>

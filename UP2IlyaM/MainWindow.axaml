@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="UP2IlyaM.MainWindow"
+        Icon="avares://UP2IlyaM/Images/service_logo.ico" 
+        Title="Авторизация" Width="400" Height="200">
+    <Grid>
+        <UniformGrid Columns="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 0 0 0">Логин </TextBlock>
+                <TextBox Name="LogIn" x:CompileBindings="False" Width="200" Height="5" Margin = "0 0 0 0" Background="White"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 0 0 0">Пароль </TextBlock>
+                <TextBox Name="Password" x:CompileBindings="False" Width="200" Height="5" Margin = "0 0 0 0" Background="White"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="Enter" Click="LoginApp" Width="100" Height="30" Margin = "10 0 0 0" Background="White">Войти</Button>
+                <Button Name="Exit" Content="Закрыть программу" Click="Exit_Program" Margin=" 10 15 15 10"></Button>
+            </StackPanel>
+        </UniformGrid>         
+    </Grid>
+</Window>

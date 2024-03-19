@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="UP2IlyaM.UserForm"
+        Icon="avares://UP2IlyaM/Images/service_logo.ico" 
+        Title="UserForm">
+    <Grid>
+    <StackPanel Orientation="Vertical">
+        <TextBlock Margin = "10 10 0 0" FontSize = "20" FontWeight="Bold"> Таблица "Услуги"</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            
+            <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по названию услуги: </TextBlock>
+            <TextBox Name="ServSearch" Width="150" Margin ="5 10 0 0" TextChanged="SearchService"></TextBox>
+            <StackPanel Margin="10 12 00 0">
+                <Button Content="Сортировать по возрастанию цены" Click="SortAsscending" Width="250"></Button>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center"
+                       x:Name="FilterDiscont" Margin ="10 10 0 0">Фильтрация по скидке: </TextBlock>
+            <ComboBox Name="DiscountComboBox" 
+                      x:CompileBindings="False"
+                      SelectionChanged="DiscountFilter" Width="150" Margin ="35 10 0 0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding }" TextAlignment="Center"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <StackPanel Margin="10 12 00 0">
+                <Button Content="Сортировать по убыванию цены" Click="SortDescending" Width="250" ></Button>
+            </StackPanel>
+        </StackPanel>
+                <StackPanel Orientation="Vertical">
+                   <StackPanel>
+                <DataGrid Name="DataGrid" x:CompileBindings="False" Margin ="10 20 0 0" Height="350" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Service}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Price}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Продолжительность" Binding="{Binding Length}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Описание" Binding="{Binding Description}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Цена со скидкой" Binding="{Binding Discount}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Изображение">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Image_ID}" Height="100" Width="100" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin=" 10 15 15 10">
+                     <Button Name="Enter" Content="Выйти" Click="LogOut" Margin=" 10 15 15 10"></Button>
+                     <Button Name="NoteButton" Content="Запись" Click="Note" Margin=" 10 15 15 10"></Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
